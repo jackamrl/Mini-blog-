@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<article>
+<h2>{{ comptes.title }}</h2>
+<div class="metadata">Ecrit le {{ comptes.createdAt | date('d/m/Y') }} à {{ comptes.createdAt | date('H:i
+')}} dans la catégorie Developpeurs</div>
+<div class="content">
+    <img src="{{ comptes.image}}" alt="">
+
+    {{ comptes.content | raw }}
+
+</div>
+</article>
+
+{% endblock %}

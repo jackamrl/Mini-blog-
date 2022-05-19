@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+
+<section class="profils">
+
+{% for comptes in compte %}
+    <article>
+        <h2>{{ comptes.title}}</h2>
+        <div class="metadata">Ecrit le {{ comptes.createdAt | date('d/m/Y') }} 
+             à {{ comptes.createdAt | date('H:i
+                ')}} dans la catégorie Developpeurs</div>
+        <div class="content">
+            <img src="{{ comptes.image}}" alt="">
+            {{ comptes.content | raw }}
+            <a href="{{ path('profil_show', {'id': comptes.id}) }}" class="btn btn-primary">Lire la suite</a>
+        </div>
+    </article>
+
+{% endfor %}
+
+     
+
+     
+</section>
+{% endblock %}
